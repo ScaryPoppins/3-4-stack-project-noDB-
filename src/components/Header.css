@@ -1,0 +1,40 @@
+header{
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    height: 8vh;
+
+}
+.headButtons{
+    display: flex;
+    align-items: center;
+    height: 4vh;
+    width:  4vw;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;    
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+button{
+    height: 4vh;
+    width:  15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    border-radius: 10px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;    
+    color: white;
+    font-size: 1.1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

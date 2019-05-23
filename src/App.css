@@ -1,0 +1,17 @@
+#app{
+  background-image: url("https://i.pinimg.com/originals/22/0d/c0/220dc0a5d8881329198d879984453817.jpg")
+}
+
+/* main is used for buy, sell, header, forums, and login */
+.main{
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 76vh;
+  margin-top: 8vh;
+  margin-left: 6vw;
+  margin-right: 6vw;
+
+}

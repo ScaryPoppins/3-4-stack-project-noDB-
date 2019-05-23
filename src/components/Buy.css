@@ -1,0 +1,10 @@
+
+/* see 'main' in app.css for light-grey structure */
+
+
+#buyinfo {
+display: flex;
+justify-self: flex-start;
+justify-content: flex-start;
+color: blue;
+}
