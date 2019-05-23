@@ -7,6 +7,7 @@ function Sell() {
         ID: TBD
         <form className='sellForm'> 
             <input type='text' name='imageURL'placeholder='imageURL'></input>
+            <input type='text' name='Price'placeholder='Price'></input>
             <input type='text' name='Year'placeholder='Year'></input>
             <input type='text' name='Make'placeholder='Make'></input>
             <input type='text' name='Model'placeholder='Model'></input>
@@ -14,7 +15,8 @@ function Sell() {
             <input type='text' name='Color'placeholder='Color'></input>
             <input type='text' name='Free Offering'placeholder='Free Offering'></input>
             <input type='text' name='Contact Name'placeholder='Contact Name'></input>
-            <input type='text' name='Contact Info'placeholder='Contact Info'></input>
+            <input type='text' name='Contact Number'placeholder='Contact Number'></input>
+            <input type='text' name='Description'placeholder='Description'></input>
             <input type='submit' value='Submit'></input>
         </form>
 

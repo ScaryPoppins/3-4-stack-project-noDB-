@@ -7,11 +7,11 @@ const buyItems = [
         make: 'Dodge',
         model: 'Van',
         mileage: '10,000',
-        color: ['red', 'maroon'],
+        color: ['red'],
         offering: 'candy',
         contactName: 'Mike Jones',
         contactNumber: '281-330-8004',
-        description: "For sale is the best candy van ever.   I/'ve had plenty of satisfied customers throughout the years, and so will you."
+        description: "For sale is the best candy van ever.   I've had plenty of satisfied customers throughout the years, and so will you."
         
     },
     {
@@ -49,7 +49,13 @@ const buyItems = [
   const buys = (req, res) => {
     res.json(buyItems);
   };
+  const add = (req, res) => {
+    buyItems.push(req.body);
+    res.json(buyItems);
+  };
+
 
   module.exports = {
-      buys
+      buys, 
+      add
   };

@@ -3,6 +3,10 @@ header{
     display: flex;
     justify-content: space-around;
     height: 8vh;
+    position: sticky;
+    top: 0;
+    width: 100%
+
 
 }
 .headButtons{
