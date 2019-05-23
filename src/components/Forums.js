@@ -3,7 +3,7 @@ import "./Forums.css";
 
 function Forums() {
   return (
-    <div className='main'>
+    <div className='main forums'>
         Coming Soon
     </div>
   );

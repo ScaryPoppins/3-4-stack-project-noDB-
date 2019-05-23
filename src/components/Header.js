@@ -10,7 +10,7 @@ class Header extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        view: "sell"
+        view: "buy"
       };
       this.changeView = this.changeView.bind(this);
     }
@@ -23,27 +23,27 @@ render(){
         <div>
     <header>
          <button className='headButtons'
-            className={this.state.view === "buy" ? "current" : ""}
+            id={this.state.view === "buy" ? "current" : ""}
             onClick={() => this.setState({ view: "buy" })}
          >Vans For Sale</button>
 
          <button className='headButtons'
-            className={this.state.view === "sell" ? "current" : ""}
+            id={this.state.view === "sell" ? "current" : ""}
             onClick={() => this.setState({ view: "sell" })}         
          >Sell A Van</button>
 
          <button className='headButtons'
-            className={this.state.view === "forums" ? "current" : ""}
+            id={this.state.view === "forums" ? "current" : ""}
             onClick={() => this.setState({ view: "forums" })} 
          >Forums</button>
 
          <button className='headButtons'
-            className={this.state.view === "events" ? "current" : ""}
+            id={this.state.view === "events" ? "current" : ""}
             onClick={() => this.setState({ view: "events" })}         
          >Events</button>
 
          <button className='headButtons'
-            className={this.state.view === "signin" ? "current" : ""}
+            id={this.state.view === "signin" ? "current" : ""}
             onClick={() => this.setState({ view: "signin" })}         
          >Sign In</button>
 

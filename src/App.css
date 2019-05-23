@@ -10,6 +10,7 @@
   align-items: center;
   flex-direction: column;
   min-height: 76vh;
+      /* object-fit: contain; */
   margin-top: 8vh;
   margin-left: 6vw;
   margin-right: 6vw;

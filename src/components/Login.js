@@ -10,9 +10,9 @@ function Login() {
             <input type='submit' value='Submit'></input>
         </div>
         <div>
-            <button>Forgot Username</button>
-            <button>Forgot Password</button>
-            <button>Sign Up</button>
+            <button className='passwordButtons'>Forgot Username</button>
+            <button className='passwordButtons'>Forgot Password</button>
+            <button className='passwordButtons'>Sign Up</button>
         </div>    
     </div>
   );

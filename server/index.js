@@ -1,6 +1,12 @@
 const express = require("express");
+const buyController = require('./controllers/buyController');
 const app = express();
+
+
 app.use(express.json());
+
+app.get('/api/buys', buyController.buys);
+
 
 
 
