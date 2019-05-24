@@ -9,8 +9,9 @@ class Buy extends Component {
     this.state = {
       buyItems: [],
       loading: true,
-      // error: ""
+      error: ""
     };
+    this.updateBuys = this.updateBuys.bind(this);
   }
 
     componentDidMount() {
@@ -19,10 +20,9 @@ class Buy extends Component {
         .then(response => {
           this.setState({ buyItems: response.data, loading: false });
         })
-        // .catch(error => {
-        //   console.log(error);
-        //   this.setState({ loading: false, error: "An error occurred" });
-        // });
+        .catch(error => {
+          this.setState({ loading: false, error: "An error occurred" });
+        });
     }
 
     updateBuys(passBuyItems) {
@@ -36,6 +36,8 @@ class Buy extends Component {
       console.log(buyItems)
       return (
         <div className='main'>
+            {this.state.loading ? <p>Loading...</p> : null}
+            {this.state.error}
 
            {buyItems.map((item, index) => (
              <Buys key={index} item={item} updateBuys={this.updateBuys}/>))}
