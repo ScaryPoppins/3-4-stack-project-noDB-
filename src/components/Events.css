@@ -1,4 +1,33 @@
+
+
+/* #picture is on buy.css */
+
+
+
 #eventHead{
+
     text-align: center;
-    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+#eventDate{
+    font-size: 2rem;
+
+}
+#eventName{
+    font-size: 1.5rem;
+}
+#eventInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.eventMain{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4vh;
+    border-bottom: 1px dotted grey;
 }

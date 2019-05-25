@@ -6,16 +6,16 @@ function Events(props) {
   // console.log({props.eventItem})
   // console.log({props.eventItem.date})
   return (
-    <div className='main'>
+    <div className='eventMain'>
       {/* console.log({props.eventItem})
       console.log({props.eventItem.date}) */}
     <table id='eventHead'>    
       <tbody>
       <tr>      
-        <td colSpan='2'>Date : {props.eventItem.date}</td>
+        <td colSpan='2' id='eventDate'>{props.eventItem.date}</td>
       </tr>
       <tr>
-           <td colSpan='2'>Name: {props.eventItem.name}</td>
+           <td colSpan='2' id='eventName'>{props.eventItem.name}</td>
         </tr>
        </tbody> 
     </table>
@@ -25,20 +25,21 @@ function Events(props) {
     <table id='eventInfo'> 
       <tbody> 
         <tr>
-           <td>Sponser</td>   <td>{props.eventItem.sponser}</td>
+           <td>Sponser:</td>   <td>{props.eventItem.sponser}</td>
       </tr>
       <tr>      
-           <td>Location</td>  <td>{props.eventItem.location}</td>
+           <td>Location:</td>  <td>{props.eventItem.location}</td>
       </tr>
       <tr> 
-           <td>Street Address</td>  <td>{props.eventItem.streetAddress}</td>
+           <td>Street Address:</td>  <td>{props.eventItem.streetAddress}</td>
         </tr>
       <tr> 
-           <td>City State Zip</td>  <td>{props.eventItem.cityStateZip}</td>
+           <td>City State Zip:</td>  <td>{props.eventItem.cityStateZip}</td>
       </tr>     
       </tbody> 
 
   </table>
+
     </div>
   );
 }

@@ -3,7 +3,7 @@ const eventItems = [
         date: 'February 30th',
         image: 'https://cdn.vox-cdn.com/thumbor/TxoxPga0au_uDpeij0xHPuWlZVo=/0x0:630x358/920x0/filters:focal(0x0:630x358):format(webp):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/12417771/CeASWubVR9OcnVpTreHQ_seems-legit-18.0.jpg',
         name: 'Help the Children event',
-        sponser: 'Ervay Childcare Facility',
+        sponser: 'S. Ervay Childcare',
         location: 'Ervay Childcare Facility',
         streetAddress: '777 S. Ervay st',
         cityStateZip: 'Dallas Tx, 75053'

@@ -5,12 +5,13 @@ import Sell from "./Sell.js";
 import Forums from "./Forums.js";
 import Event from "./Event";
 import Login from "./Login.js";
+import About from "./About.js";
 
 class Header extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        view: "buy"
+        view: "about"
       };
       this.changeView = this.changeView.bind(this);
       this.sold = this.sold.bind(this);
@@ -25,6 +26,12 @@ render(){
     return(
         <div>
          <header>
+
+         <button className='headButtons'
+            id={this.state.view === "about" ? "current" : ""}
+            onClick={() => this.setState({ view: "about" })}     
+         >About</button>
+
          <button className='headButtons'
             id={this.state.view === "buy" ? "current" : ""}
             onClick={() => this.setState({ view: "buy" })}
@@ -47,8 +54,10 @@ render(){
 
          <button className='headButtons'
             id={this.state.view === "signin" ? "current" : ""}
-            onClick={() => this.setState({ view: "signin" })}         
+            onClick={() => this.setState({ view: "signin" })}     
          >Sign In</button>
+
+
 
 
         {/* {this.state.view === "buy" ? (
@@ -68,8 +77,10 @@ render(){
         } */}
         </header>
     <div>
-        {this.state.view === "buy" ? 
-             (<Buy />)
+        {this.state.view === "about" ? 
+             (<About />)
+        : this.state.view === "buy" ?
+             (< Buy changeView={this.changeView}/>)            
         : this.state.view === "sell" ?
              (<Sell changeView={this.changeView} sold={this.sold}/>)
         : this.state.view === "forums" ?
