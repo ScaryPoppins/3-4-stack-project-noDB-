@@ -45,17 +45,32 @@ const buyItems = [
         
     },
   ];
+    let currentID =0;
 
   const buys = (req, res) => {
     res.json(buyItems);
   };
-  const add = (req, res) => {
+
+  const sell = (req, res) => {
+    //   console.log(req.body)
+    //   console.log(req.body.id)
+    // let id = req.body.id;
+    // req.body.
+    currentID=buyItems.length
+        console.log(currentID)
+    req.body.id=currentID+1;
+        console.log(req.body.id)
     buyItems.push(req.body);
     res.json(buyItems);
   };
-
+  const deleteItem = (req, res) => {
+    const index = buyItems.findIndex(element => element.id == req.params.id);
+    buyItems.splice(index, 1);
+    res.json(buyItems);
+  }
 
   module.exports = {
       buys, 
-      add
+      sell,
+      deleteItem
   };

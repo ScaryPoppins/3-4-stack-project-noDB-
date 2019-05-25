@@ -21,6 +21,7 @@ class Buy extends Component {
           this.setState({ buyItems: response.data, loading: false });
         })
         .catch(error => {
+          console.log(error);  
           this.setState({ loading: false, error: "An error occurred" });
         });
     }
@@ -41,7 +42,7 @@ class Buy extends Component {
 
            {buyItems.map((item, index) => (
              <Buys key={index} item={item} updateBuys={this.updateBuys}/>))}
-            
+             
         </div>
       
     

@@ -3,7 +3,7 @@ import "./Header.css";
 import Buy from "./Buy.js";
 import Sell from "./Sell.js";
 import Forums from "./Forums.js";
-import Events from "./Events";
+import Event from "./Event";
 import Login from "./Login.js";
 
 class Header extends Component {
@@ -13,15 +13,18 @@ class Header extends Component {
         view: "buy"
       };
       this.changeView = this.changeView.bind(this);
+      this.sold = this.sold.bind(this);
     }
     changeView(newView) {
       this.setState({ view: newView });
     }
-
+    sold(changeToBuy) {
+      this.setState({view: changeToBuy})
+    }
 render(){
     return(
         <div>
-    <header>
+         <header>
          <button className='headButtons'
             id={this.state.view === "buy" ? "current" : ""}
             onClick={() => this.setState({ view: "buy" })}
@@ -38,8 +41,8 @@ render(){
          >Forums</button>
 
          <button className='headButtons'
-            id={this.state.view === "events" ? "current" : ""}
-            onClick={() => this.setState({ view: "events" })}         
+            id={this.state.view === "event" ? "current" : ""}
+            onClick={() => this.setState({ view: "event" })}         
          >Events</button>
 
          <button className='headButtons'
@@ -68,11 +71,11 @@ render(){
         {this.state.view === "buy" ? 
              (<Buy />)
         : this.state.view === "sell" ?
-             (<Sell changeView={this.changeView}/>)
+             (<Sell changeView={this.changeView} sold={this.sold}/>)
         : this.state.view === "forums" ?
              (<Forums changeView={this.changeView}/>)
-        : this.state.view === "events" ?
-             (<Events changeView={this.changeView}/>)
+        : this.state.view === "event" ?
+             (<Event changeView={this.changeView}/>)
         : this.state.view === "signin" ?
              (<Login changeView={this.changeView}/>)
         : "Something went wrong"

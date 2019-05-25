@@ -1,27 +1,82 @@
 import React, { Component } from "react";
 import "./Sell.css";
+import axios from "axios";
+// import buyController from '../server/controllers/buyController';
 
-function Sell() {
+
+class Sell extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // id: 0,
+      image: '',
+      price: '',
+      year: '',
+      make: '',
+      model: '',
+      mileage: '',
+      color: '',
+      offering: '',
+      contactName: '',
+      contactNumber: '',
+      description: ''
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  
+  
+  render() {
+  let {image,price,year, make, model, mileage, color, offering, contactName, contactNumber, description} = this.state;
+  let thc=this.handleChange;
   return (
     <div className='main'>
-        ID: TBD
-        <form className='sellForm'> 
-            <input type='text' name='imageURL'placeholder='imageURL'></input>
-            <input type='text' name='Price'placeholder='Price'></input>
-            <input type='text' name='Year'placeholder='Year'></input>
-            <input type='text' name='Make'placeholder='Make'></input>
-            <input type='text' name='Model'placeholder='Model'></input>
-            <input type='text' name='Mileage'placeholder='Mileage'></input>
-            <input type='text' name='Color'placeholder='Color'></input>
-            <input type='text' name='Free Offering'placeholder='Free Offering'></input>
-            <input type='text' name='Contact Name'placeholder='Contact Name'></input>
-            <input type='text' name='Contact Number'placeholder='Contact Number'></input>
-            <input type='text' name='Description'placeholder='Description'></input>
-            <input type='submit' value='Submit'></input>
+        <form className='sellForm'
+               onSubmit={e => {
+                e.preventDefault();
+                console.log(this.state.image)
+                 axios
+                 .post("/api/sell", {
+                    image,
+                    price,
+                    year,
+                    make,
+                    model,
+                    mileage,
+                    color,
+                    offering,
+                    contactName,
+                    contactNumber,
+                    description
+                 })
+                .then(response => {
+                    console.log(response.data);
+                     this.props.sold('buy')
+                })
+                .catch(error => {
+                    console.log(error);
+                });              
+              }}>  
+            <input type='text' name='image'placeholder='imageURL' onChange={thc}></input>
+            <input type='text' name='price'placeholder='Price' onChange={thc}></input>
+            <input type='text' name='year'placeholder='Year' onChange={thc}></input>
+            <input type='text' name='make'placeholder='Make' onChange={thc}></input>
+            <input type='text' name='model'placeholder='Model' onChange={thc}></input>
+            <input type='text' name='mileage'placeholder='Mileage' onChange={thc}></input>
+            <input type='text' name='color'placeholder='Color' onChange={thc}></input>
+            <input type='text' name='offering'placeholder='Free Offering' onChange={thc}></input>
+            <input type='text' name='contactName'placeholder='Contact Name' onChange={thc}></input>
+            <input type='text' name='contactNumber'placeholder='Contact Number' onChange={thc}></input>
+            <input type='text' name='description'placeholder='Description' onChange={thc}></input>
+            <button type='submit' value='Submit'>submit</button>
         </form>
-
     </div>
   );
 }
-
+}
 export default Sell;

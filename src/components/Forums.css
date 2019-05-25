@@ -4,3 +4,7 @@
     color: white;
     text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 2px 4px 0 grey;
 }
+aside{
+    font-size: 1em;
+    color: white;
+}
