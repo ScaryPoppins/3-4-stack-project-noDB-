@@ -9,7 +9,7 @@ function Buys(props) {
  // put (edit)   
 let edit = [<button className='buttons'
 
-    onClick={() =>  props.editItem}
+    onClick={() =>  props.editItem()}
 
 >Edit</button>];
 
