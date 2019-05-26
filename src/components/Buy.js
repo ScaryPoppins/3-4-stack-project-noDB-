@@ -39,7 +39,7 @@ class Buy extends Component {
   
   editItem( id, text ) {
     console.log( 'editItem:', id, text ); 
-    axios.put('/api/update/:id', { text } ).then( response => {
+    axios.put('/api/update/' + this.state.id, { text } ).then( response => {
       this.setState({ buyItems: response.data });
     });
   }
@@ -53,7 +53,7 @@ class Buy extends Component {
             {this.state.error}
 
            {buyItems.map((item, index) => (
-             <Buys key={index} item={item} buyList={this.buyList}/>))}
+             <Buys key={index} item={item} editItem={this.editItem} buyList={this.buyList}/>))}
              
         </div>
       

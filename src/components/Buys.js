@@ -7,7 +7,11 @@ function Buys(props) {
 
 
  // put (edit)   
-let edit = [<button className='buttons'>Edit</button>];
+let edit = [<button className='buttons'
+
+    onClick={() =>  props.editItem}
+
+>Edit</button>];
 
 
 

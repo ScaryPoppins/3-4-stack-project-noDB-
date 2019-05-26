@@ -11,7 +11,7 @@ app.use(express.json());
 
 
 app.get('/api/buys',buyController.buys);
-app.delete("/api/buys/:id",buyController.deleteItem);
+app.delete("/api/delete/:id",buyController.deleteItem);
 app.post("/api/sell",buyController.sell);
 
 //experiment.........................................
