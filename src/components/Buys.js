@@ -4,11 +4,22 @@ import axios from "axios";
 function Buys(props) {
     // console.log(props.item.id)
 
+
+
+ // put (edit)   
 let edit = [<button className='buttons'>Edit</button>];
+
+
+
+
+
+
+
+  // delete
 let deleted = [<button className='buttons'
    onClick={() => {
      axios.delete("/api/delete/" + props.item.id).then(response => {
-       props.updateBuys(response.data);
+       props.buyList(response.data);
      });
    }}
 >Delete</button>]
@@ -33,6 +44,7 @@ let deleted = [<button className='buttons'
        <img 
           src={props.item.image}
           id="picture"
+          alt='creepy van'
         ></img>
         </div>
 

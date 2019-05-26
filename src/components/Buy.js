@@ -11,9 +11,11 @@ class Buy extends Component {
       loading: true,
       error: ""
     };
-    this.updateBuys = this.updateBuys.bind(this);
+    this.buyList = this.buyList.bind(this);
   }
 
+
+  // for get request
     componentDidMount() {
       axios
         .get("/api/buys")
@@ -26,22 +28,32 @@ class Buy extends Component {
         });
     }
 
-    updateBuys(passBuyItems) {
+
+    // for delete request
+    buyList(passBuyItems) {
       this.setState({buyItems: passBuyItems})
     }
 
+  // for put (edit) request:
 
+  
+  editItem( id, text ) {
+    console.log( 'editItem:', id, text ); 
+    axios.put('/api/update/:id', { text } ).then( response => {
+      this.setState({ buyItems: response.data });
+    });
+  }
 
+    // show on screen
     render() {
       const { buyItems } = this.state;
-      console.log(buyItems)
       return (
         <div className='main'>
             {this.state.loading ? <p>Loading...</p> : null}
             {this.state.error}
 
            {buyItems.map((item, index) => (
-             <Buys key={index} item={item} updateBuys={this.updateBuys}/>))}
+             <Buys key={index} item={item} buyList={this.buyList}/>))}
              
         </div>
       

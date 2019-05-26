@@ -1,6 +1,5 @@
 import React from "react";
 import "./Events.css";
-import axios from "axios";
 
 function Events(props) {
   // console.log({props.eventItem})
@@ -20,7 +19,7 @@ function Events(props) {
        </tbody> 
     </table>
 
-        <img src={props.eventItem.image} id="picture" ></img>
+        <img src={props.eventItem.image} id="picture" alt='creepy van'></img>
 
     <table id='eventInfo'> 
       <tbody> 
