@@ -59,22 +59,6 @@ render(){
 
 
 
-
-        {/* {this.state.view === "buy" ? (
-          <Buy />
-        ) : (
-          <Sell changeView={this.changeView} />
-        )} */}
-
-
-        {/* {
-            if (this.state.view === "buy"){
-            <Buy />
-        }
-        else if(this.state.view === "sell"){
-            <Sell />
-        }
-        } */}
         </header>
     <div>
         {this.state.view === "about" ? 

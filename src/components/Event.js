@@ -32,7 +32,6 @@ class Event extends Component {
 
       render() {
         const { eventItems } = this.state;
-        console.log(eventItems)
         return (
           <div className='main'>
               {this.state.loading ? <p>Loading...</p> : null}
