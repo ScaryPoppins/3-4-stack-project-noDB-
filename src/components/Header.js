@@ -11,7 +11,7 @@ class Header extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        view: "about"
+        view: "buy"
       };
       this.changeView = this.changeView.bind(this);
       this.sold = this.sold.bind(this);
@@ -64,7 +64,7 @@ render(){
         {this.state.view === "about" ? 
              (<About />)
         : this.state.view === "buy" ?
-             (< Buy changeView={this.changeView}/>)            
+             (< Buy changeView={this.changeView} sold ={this.sold}/>)            
         : this.state.view === "sell" ?
              (<Sell changeView={this.changeView} sold={this.sold}/>)
         : this.state.view === "forums" ?

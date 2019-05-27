@@ -1,6 +1,21 @@
 
 /* see 'main' in app.css for light-grey structure */
 
+.search1{
+    display: flex;
+    justify-content: space-between;
+    width: 84vw;
+    margin-top: 1vh;
+
+}
+.search2{
+    display: flex;
+    justify-content: flex-end;
+    width: 84vw;
+    padding-bottom: 1vh;
+    border-bottom: 1px dotted grey;
+}
+
 .buyers{
     display: flex;
     justify-content: center;
@@ -49,7 +64,7 @@ table {
 
 #picture {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 40vh;   
     margin-bottom: 4vh;

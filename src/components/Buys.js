@@ -9,7 +9,11 @@ function Buys(props) {
  // put (edit)   
 let edit = [<button className='buttons'
 
-    onClick={() =>  props.editItem()}
+
+   // uncomment the below to get edit button progress.   
+   // need to add a place to edit.  This will require building the edit component simular to the sell component. 
+   // it also will need a hidden area in the header that does not get clicked with a button.   
+   //  onClick={() =>  props.editItem(props.item.id, )}
 
 >Edit</button>];
 
@@ -22,6 +26,7 @@ let edit = [<button className='buttons'
   // delete
 let deleted = [<button className='buttons'
    onClick={() => {
+      console.log(props.item.id)
      axios.delete("/api/delete/" + props.item.id).then(response => {
        props.buyList(response.data);
      });

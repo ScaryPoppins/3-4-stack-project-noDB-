@@ -8,7 +8,6 @@ class Sell extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // id: 0,
       image:'',
       price:'',
       year:'',
@@ -39,7 +38,6 @@ class Sell extends Component {
         <form className='sellForm'
                onSubmit={e => {
                 e.preventDefault();
-                console.log(this.state.image)
                  axios
                  .post("/api/sell", {
                     image,

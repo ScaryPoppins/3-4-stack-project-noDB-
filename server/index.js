@@ -13,12 +13,21 @@ app.use(express.json());
 app.get('/api/buys',buyController.buys);
 app.delete("/api/delete/:id",buyController.deleteItem);
 app.post("/api/sell",buyController.sell);
-
-//experiment.........................................
-app.put('/api/update/:id',buyController.update)
-
+// search by color
+app.get('/api/buys/color/:color', buyController.searchColor)
+// search by make
+app.get('/api/buys/make/:make', buyController.searchMake)
 //server for events
 app.get('/api/events',eventsController.events);
+
+
+
+
+//edit......not finished...............
+app.put('/api/update/:id',buyController.update)
+
+
+
 
 const port = 4040
 app.listen(port,() => {

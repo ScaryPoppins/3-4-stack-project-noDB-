@@ -1,4 +1,4 @@
-const buyItems = [
+const items = [
     {
         id: 1,
         image: 'https://i.kinja-img.com/gawker-media/image/upload/s--rPjC8x1n--/c_fit,f_auto,fl_progressive,q_80,w_636/18r6nnbg5yjj1jpg.jpg',
@@ -7,7 +7,7 @@ const buyItems = [
         make: 'Dodge',
         model: 'Van',
         mileage: '10,000',
-        color: ['red'],
+        color: 'Red',
         offering: 'candy',
         contactName: 'Mike Jones',
         contactNumber: '281-330-8004',
@@ -22,7 +22,7 @@ const buyItems = [
         make: 'Toyota',
         model: 'Van',
         mileage: '345,000',
-        color: 'blue',
+        color: 'Blue',
         offering: 'candy',
         contactName: 'Jenny',
         contactNumber: '867-5309',
@@ -37,7 +37,7 @@ const buyItems = [
         make: 'Dodge',
         model: 'Ram Van',
         mileage: '249,900',
-        color: 'white',
+        color: 'White',
         offering: 'pokemon',
         contactName: 'Alexander Graham Bell',
         contactNumber: '1',
@@ -94,7 +94,7 @@ const buyItems = [
     make: 'Ford',
     model: 'E-350 Cargo Van',
     mileage: '60,000',
-    color: 'white',
+    color: 'White',
     offering: 'Candy',
     contactName: 'Freddy Krueger',
     contactNumber: '701-347-1936',
@@ -204,54 +204,78 @@ const buyItems = [
 
     // get (view) request for buys
   const buys = (req, res) => {
-    res.json(buyItems);
+    res.json(items);
   };
 
   // post (add) request for buys
   const sell = (req, res) => {
-    currentID=buyItems.length
+    currentID=items.length
     req.body.id=currentID+1;
-    buyItems.push(req.body);
-    res.json(buyItems);
+    items.push(req.body);
+    res.json(items);
   };
 
  // delete request for buys
   const deleteItem = (req, res) => {
-    const index = buyItems.findIndex(element => element.id == req.params.id);
-    buyItems.splice(index, 1);
-    res.json(buyItems);
+    const index = items.findIndex(element => element.id == req.params.id);
+    items.splice(index, 1);
+    res.json(items);
   };
 
 // put (edit) request for buys
 const update = (request, response) => {
          // find the id:
    let index=null;
-   buyItems.forEach((item, i) => {
-      if(buyItems.id === Number(request.params.id)) index = i;
+   items.forEach((item, i) => {
+      if(item.id === Number(request.params.id)) index = i;
    });
          // then do this:
-    buyItems[index] = {
-      id: buyItems[index].id,
-      image: request.body.image || buyItems[index].image,
-      price: request.body.price || buyItems[index].price,
-      year: request.body.year || buyItems[index].year,
-      make: request.body.make || buyItems[index].make,
-      model: request.body.model || buyItems[index].model,
-      mileage: request.body.mileage || buyItems[index].mileage,
-      color: request.body.color || buyItems[index].color,
-      offering: request.body.offering || buyItems[index].offering,
-      contactName: request.body.contactName || buyItems[index].contactName,
-      contactNumber: request.body.contactNumber || buyItems[index].contactNumber,
-      description: request.body.description || buyItems[index].description
+    items[index] = {
+      id: items[index].id,
+      image: request.body.image || items[index].image,
+      price: request.body.price || items[index].price,
+      year: request.body.year || items[index].year,
+      make: request.body.make || items[index].make,
+      model: request.body.model || items[index].model,
+      mileage: request.body.mileage || items[index].mileage,
+      color: request.body.color || items[index].color,
+      offering: request.body.offering || items[index].offering,
+      contactName: request.body.contactName || items[index].contactName,
+      contactNumber: request.body.contactNumber || items[index].contactNumber,
+      description: request.body.description || items[index].description
     }
          // then show this in response
-      response.status(200).send(buyItems)
+      response.status(200).send(items)
   }
+
+
+// get (search) request for COLOR
+  const searchColor = (req, res) =>{
+    // console.log(req.params)
+        // search for this
+    let colored = items.filter(items => items.color.toLowerCase() === req.params.color.toLowerCase())
+        // return this
+        // console.log(colored)
+    res.json(colored);
+}
+
+
+// // get (search) request for MAKE
+const searchMake = (req, res) =>{
+  console.log(req.params)
+      // search for this
+  let maked = items.filter(items => items.make.toLowerCase() === req.params.make.toLowerCase())
+      // return this
+      // console.log(maked)
+  res.json(maked);
+}
 
 // exports
   module.exports = {
       buys, 
       sell,
       deleteItem,
-      update
+      update,
+      searchColor,
+      searchMake
   };
