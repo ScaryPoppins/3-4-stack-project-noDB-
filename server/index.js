@@ -10,9 +10,19 @@ app.use(express.json());
 //set up function on controller to filter to show white using filter function
 
 
+
+// see list
 app.get('/api/buys',buyController.buys);
+
+// delete from list
 app.delete("/api/delete/:id",buyController.deleteItem);
+
+// add to list
 app.post("/api/sell",buyController.sell);
+
+
+
+
 // search by color
 app.get('/api/buys/color/:color', buyController.searchColor)
 // search by make
